@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>WeTrip Home Page</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}" /> 
+  </head>
+
+  <body>
+    <div class="container">
+        <!-- the background picture and the search bar -->
+        <div class="row">
+        <img src="http://wallpapers-best.com/uploads/posts/2015-12/22_beijing.jpg" class="img-responsive">
+        </div>
+        <div class="row">
+        <input type="text" name="search" placeholder="Search...">
+        </div>
+
+        <!-- The three "places to discover" under search-->
+        <div class="row">
+            <p align="center"><font size = "6">Places to discover</font></p>
+            <div class="col-md-4">
+                <img src="https://i.ytimg.com/vi/_FYKIhJZdaI/maxresdefault.jpg" class = "img-rounded" style="width:304px;height:228px;">
+            </div>
+            <div class="col-md-4">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTaDFVK93HlMv6VbWDYl7UvHRUEhTbkgRxqF7GCP32_-xQ6W-Hn" class = "img-rounded" style="width:304px;height:228px;">
+            </div>
+            <div class="col-md-4">
+                <img src="https://www.lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2013/11/hikehongkong_cs.jpg" class = "img-rounded" style="width:304px;height:228px;">
+            </div>
+        </div>   
+
+        <!-- The review of the week, and the people near you -->
+        <div class="row">
+            <div class = "col-md-4">
+                </br>
+                <p align="center">Review of the Week</p>
+                <img src="http://cdn2.tillthemoneyrunsout.com/wp-content/uploads/2014/08/15061801281_3a827d2f58_k-980x463.jpg" class="img-rounded" style="width:304px;height:228px;">
+                <p align="center">Kyoto, Japan</p>
+            </div>
+            <div class="col-md-8">
+                </br>
+                <p align="center"><font size="3">People Near You...</font></p>
+                </br>
+                <p align="center">Kevin Tai added a bookmark in Moscow, Russia.</p>
+                </br>
+                <p align="center">Matthew Du wrote a review for Los Angeles, California, US.</p>
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

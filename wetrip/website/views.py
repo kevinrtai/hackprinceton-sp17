@@ -4,18 +4,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-  template = loader.get_template('website/index.html')
-  context = {}
-  return HttpResponse(template.render(context, request))
+  return render(request, 'website/index.html')
 
 def login(request):
-  return HttpResponse("Login page") 
+  return render(request, 'website/login.html')
 
 def profile(request):
   return HttpResponse("Profile page")
 
 def destination(request):
-  return HttpResponse("Destination page")
+  return render(request, 'website/destination.html')
 
 def planning(request):
   return HttpResponse("Planning Page")
