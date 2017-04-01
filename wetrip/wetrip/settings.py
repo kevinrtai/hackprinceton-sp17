@@ -25,7 +25,7 @@ SECRET_KEY = 'tz6i5!d71&_m#5u!*87m0usyf-!w!wo7-@cy)8@u5x31epj$u='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wetrip.nrgspxhkid.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Pacific'
 
 USE_I18N = True
 
