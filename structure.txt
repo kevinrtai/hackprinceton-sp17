@@ -1,0 +1,34 @@
+- Home/feed page
+- Individual user page
+  - Reviews
+  - Photos
+  - Groups
+  - Bookmarks
+  - About me
+  - Add friends
+- Destination Page  
+  - Reviews
+  - Dropdown list of friends going
+  - Photos
+  - Create group/bookmark
+- Planning Page
+  - Select destination
+  - Select friends
+
+
+How do pages link together?
+Flow of website?
+Destination weather information?
+ML for recommendations?
+News stories about the place?
+Top reviewers?
+
+
+Site focus?
+  - Exploring past trips
+    - See friend's past itineraries
+    - Publish your own itinerary as public
+    - Interface that shows you a person's trip history over time
+  - Planning future trips
+    - Pretty connected to the "past-focused pages"
+
