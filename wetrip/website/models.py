@@ -7,6 +7,7 @@ from django.db import models
 class Login(models.Model):
   username = models.CharField(max_length=20)
   password = models.CharField(max_length=40)
+  email = models.EmailField(max_length=50, unique=True)
   
   def __str__(self):
     return self.username
@@ -14,12 +15,11 @@ class Login(models.Model):
 
 class User(models.Model):
   login = models.OneToOneField(Login, on_delete=models.CASCADE, primary_key=True)
-  email = models.EmailField(max_length=50)
   first_name = models.CharField(max_length=20)
   last_name = models.CharField(max_length=20)
   profile_pic = models.URLField(blank=True, null=True)
-  groups = models.ManyToManyField('Group', blank=True, null=True)
-  friends = models.ManyToManyField('self', blank=True, null=True)
+  groups = models.ManyToManyField('Group', blank=True)
+  friends = models.ManyToManyField('self', blank=True)
 
   def __str__(self):
     return self.first_name + self.last_name
@@ -29,7 +29,7 @@ class Group(models.Model):
   group_name = models.CharField(max_length=20)
 
   def __str__(self):
-    return self.group_name
+    return str(self.id) + '_' + str(self.group_name)
 
 
 class Media(models.Model):
@@ -44,7 +44,7 @@ class Media(models.Model):
 class Review(models.Model):
   review_text = models.TextField()
   author = models.ForeignKey(User, on_delete=models.CASCADE)
-  media = models.ManyToManyField(Media, blank=True, null=True)
+  media = models.ManyToManyField(Media, blank=True)
   destination = models.ForeignKey('Destination')
 
   def __str__(self):
@@ -59,12 +59,21 @@ class Destination(models.Model):
     return self.name
 
 
+class DestinationInfo(models.Model):
+  dest = models.ForeignKey(Destination, on_delete=models.CASCADE)
+  trip = models.ForeignKey('Trip')
+  order = models.PositiveIntegerField()  
+
+  def __str__(self):
+    return str(self.trip) + '_' + str(self.order)
+
+
 class Trip(models.Model):
   participants = models.ManyToManyField(User)
   name = models.CharField(max_length=20)
   owner = models.ForeignKey(User, related_name="owner")
-  dests = models.ManyToManyField(Destination, blank=True, null=True)
+  dests = models.ManyToManyField(Destination, through=DestinationInfo, blank=True)
 
   def __str__(self):
-    return self.name
+    return str(self.id) + '_' + str(self.name)
 
