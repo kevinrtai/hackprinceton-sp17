@@ -1,0 +1,39 @@
+{% extends 'website/base_generic.html' %}
+
+{% block title %}WeTrip Profile Pages{% endblock %}
+
+{% block content %}
+<div class="container">
+  <!-- the top section of the screen: profile picture, person's name, their location, number of friends, number of reviews, and number of photos-->
+  <div class="row">
+      <div class="col-md-3">
+      </br>
+      <img src="http://texasmca.com/wp-content/uploads/2012/09/headshot-2-1-632x890.jpg" class="img-circle" style="width:200px;height:200px;">
+      </div>
+      <div class="col-md-9">
+      </br></br>
+      <p align="left"><font size="10">Mickey Li</font></p>
+      <p align="left"><font size="5">Austin, TX</font></p>
+      <p align="left"><font size="5">97 Friends, 16 Reviews, 49 Photos</font></p>
+      </div>
+  </div>
+
+  <!-- contains the side bar: reviews, photos, bookmarks, about -->
+  <div class="row">
+      <div class = "col-md-3">
+          <div id="mySideNav" class = "sidenav">
+              </br>
+              <a href="#"><font size = "6">Reviews</font></a>    </br>
+              <a href="#"><font size = "6">Photos</font></a>      </br>
+              <a href="#"><font size = "6">Bookmarks</font></a>   </br>
+              <a href="#"><font size = "6">About</font></a></br>
+          </div>
+      </div>
+
+      <!-- contains the about section -->
+      <div class="col-md-9">
+          {% block profile-content %} {% endblock %}
+      </div>
+  </div>
+</div>
+{% endblock %}

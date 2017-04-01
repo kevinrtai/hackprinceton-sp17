@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+{% extends 'website/base_generic.html' %}
 
-    <title>WeTrip Destination Pages</title>
+{% block title %} WeTrip Destination Page {% endblock %}
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
-  </head>
-
-  <body>
+{% block content %}
     <div class="container">
         <!-- the top three pictures above the actual destination name & destination name -->
         <div class="row">
             <img src="http://www.euroclubschools.net/userimages/Escargot.jpg" class="img-rounded" style="width:380px;height:310px;">
             <img src="http://images.r.cruisecritic.com/features/2016/03/seine-river-tips-3.jpg" class="img-rounded" style="width:380px;height:310px;">
-            <img src="https://cdn.getyourguide.com/niwziy2l9cvz/5DIBpZtmV2iaIgWgk6y2yC/12d243f532e40a6ac79c698ef820632e/paris-arc-de-triomphe-1500x850__3_.jpg" class="img-rounded" style="width:380px;height:310px;">   
+            <img src="https://cdn.getyourguide.com/niwziy2l9cvz/5DIBpZtmV2iaIgWgk6y2yC/12d243f532e40a6ac79c698ef820632e/paris-arc-de-triomphe-1500x850__3_.jpg" class="img-rounded" style="width:380px;height:310px;">
         </div>
         <div class="row">
         <p align="center"><font size = "8">PARIS, FRANCE</font></p>
@@ -37,31 +19,17 @@
             <div class = "col-md-4">
                 <div id="mySideNav" class = "sidenav">
                     <a href="#"><font size = "6">Reviews</font></a>    </br>
-                    <a href="#"><font size = "6">Photos</font></a>      </br>      
-                    <a href="#"><font size = "6">Friends Interested</font></a>   </br>         
+                    <a href="#"><font size = "6">Photos</font></a>      </br>
+                    <a href="#"><font size = "6">Friends Interested</font></a>   </br>
                     <a href="#"><font size = "6">Create Group</font></a></br>
                     <a href="#"><font size = "6">Bookmark</font></a></br>
                 </div>
-            </div>   
-
-        <!-- Reviews of the city -->
-            <div class = "col-md-8">
-                <p align="left">Miki Somosot, 3/28/17</p>
-                <p align="left">Great city! Enjoyed the review. 
             </div>
-            <div class="col-md-8">
-                </br>
-                <p align="center"><font size="3">People Near You...</font></p>
-                </br>
-                <p align="center">Kevin Tai added a bookmark in Moscow, Russia.</p>
-                </br>
-                <p align="center">Matthew Du wrote a review for Los Angeles, California, US</.p>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
-</html>
+        <!-- Content placeholder -->
+        <div class="col-md-8">
+          {% block dest-content %}
+          {% endblock %}
+        </div>
+
+{% endblock %}

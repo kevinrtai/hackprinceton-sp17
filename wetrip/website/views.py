@@ -10,13 +10,13 @@ def login(request):
   return render(request, 'website/login.html')
 
 def profile(request):
-  return HttpResponse("Profile page")
+  return render(request, 'website/profile-about.html')
 
 def destination(request):
-  return render(request, 'website/destination.html')
+  return render(request, 'website/destination-reviews.html')
 
 def planning(request):
-  return HttpResponse("Planning Page")
+  return render(request, 'website/planning.html')
 
 def search(request):
   return HttpResponse("Search Page")

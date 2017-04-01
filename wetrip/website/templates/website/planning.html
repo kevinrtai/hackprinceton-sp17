@@ -1,0 +1,31 @@
+{% extends 'website/base_generic.html' %}
+
+{% block title %}WeTrip Profile Pages{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p><font size="10">Create a trip!</font></p>
+      </br>
+      <div class="form-group">
+        <label for="usr">Add Destination(s)</label>
+        <input type="text" name="form-control" id="usr">
+      </div>
+      <div class="form-group">
+          <label for="usr">Time(s)</label>
+          <input type="text" name="form-control" id="usr">
+      </div>
+      <div class="form-group">
+          <label for="usr">Add Friend(s)</label>
+          <input type="text" name="form-control" id="usr">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comments:</label>
+        <textarea class="form-control" rows="3" id="comment"></textarea>
+      </div>
+      <button type="button">Create the group!</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
