@@ -7,45 +7,46 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>WeTrip Profile Pages</title>
+    <title>WeTrip Sign In Page</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
   </head>
 
-  <body>
-    <!-- The adding destinations portion of creating a trip-->
-    <div class="col-md-7">
-        <p><font size="10">Create a trip!</font></p>
-        </br>
+  <body class="full">
 
-        <div class="form-group">
-          <label for="usr">Add Destination(s)</label>
-          <input type="text" name="form-control" id="usr">
+    <div class="container container-table">
+      <div class="row vertical-center-row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 ">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="google.com">Forgot Password?</a><br/>
+            <a href="google.com">Create a WeTrip account</a>
+          </form>
         </div>
-        <div class="form-group">
-            <label for="usr">Time(s)</label>
-            <input type="text" name="form-control" id="usr">
-        </div>
-        <div class="form-group">
-            <label for="usr">Add Friend(s)</label>
-            <input type="text" name="form-control" id="usr">
-        </div>
-        <div class="form-group">
-          <label for="comment">Comments:</label>
-          <textarea class="form-control" rows="3" id="comment"></textarea>
+        <div class="col-md-4"></div>
+      </div>
+    </div> <!-- /container -->
 
-    </div>
-    <button type="button">Create the group!</button>
-    
-   <!-- Latest compiled and minified JavaScript -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -53,3 +54,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
+

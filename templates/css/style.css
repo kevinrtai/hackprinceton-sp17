@@ -1,4 +1,4 @@
-.full { 
+.full { 	
   background: url("https://i.ytimg.com/vi/hFlmkkVve94/maxresdefault.jpg") no-repeat center fixed;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -22,3 +22,11 @@ html, body, .container-table {
     vertical-align: middle;
 }
 
+#navbar {
+	background-image: linear-gradient(to bottom,#60C877,#60C877 100%);
+}
+
+.navbar-button {
+	background-image: linear-gradient(to bottom,#2C7C3E,#2C7C3E 100%);
+	color: white;
+}

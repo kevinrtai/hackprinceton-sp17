@@ -7,45 +7,41 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>WeTrip Profile Pages</title>
-
+    <title>{% block title %}WeTrip Base Page{% endblock %}</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css" crossorigin="anonymous">
   </head>
 
-  <body>
-    <!-- The adding destinations portion of creating a trip-->
-    <div class="col-md-7">
-        <p><font size="10">Create a trip!</font></p>
-        </br>
+  <body> 
+      <nav id="navbar" class="navbar navbar-default">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">WeTrip</a>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default navbar-button">Submit</button>
+          </form>
 
-        <div class="form-group">
-          <label for="usr">Add Destination(s)</label>
-          <input type="text" name="form-control" id="usr">
-        </div>
-        <div class="form-group">
-            <label for="usr">Time(s)</label>
-            <input type="text" name="form-control" id="usr">
-        </div>
-        <div class="form-group">
-            <label for="usr">Add Friend(s)</label>
-            <input type="text" name="form-control" id="usr">
-        </div>
-        <div class="form-group">
-          <label for="comment">Comments:</label>
-          <textarea class="form-control" rows="3" id="comment"></textarea>
 
-    </div>
-    <button type="button">Create the group!</button>
-    
-   <!-- Latest compiled and minified JavaScript -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Sign In</a></li>
+
+          </ul>
+
+        </div>
+      </nav>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+     <!-- Latest compiled and minified JavaScript -->
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
