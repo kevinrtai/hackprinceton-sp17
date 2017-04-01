@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['wetrip.nrgspxhkid.us-west-2.elasticbeanstalk.com', '127.0.0.1'
 # Application definition
 
 INSTALLED_APPS = [
+    'website.apps.WebsiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
