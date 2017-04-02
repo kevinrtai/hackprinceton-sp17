@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^profile/(?P<username>[a-zA-Z]+)/(?P<page>[a-zA-Z]+)/', views.profile, name='profile'),
     url(r'^destination/(?P<dest_id>[0-9]+)/(?P<page>[a-zA-z]+)/', views.destination, name='destination'),
     url(r'^tripplanner/(?P<trip_id>[0-9]+)/', views.planning, name='tripplanner'),
-    url(r'^search/', views.search , name='search')
+    url(r'^search/', views.search , name='search'),
 ]

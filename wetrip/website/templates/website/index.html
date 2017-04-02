@@ -15,11 +15,11 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  
+
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}" /> 
+    <link rel="stylesheet" type="text/css" href="{% static 'website/style.css' %}" />
   </head>
 
   <body>
@@ -34,14 +34,14 @@
   			</div>
   		<div class="featurette">
   			<div class="featurette-inner text-center">
-  				</br></br></br></br></br>
-  				<img src="https://s3-us-west-2.amazonaws.com/wetrip-bucket/WeTrip_Logo.jpg" class="img-rounded"></br>  			
-  				<form role="form" class="search">
+  				</br></br></br></br></br></br></br>
+  				<img src="https://s3-us-west-2.amazonaws.com/wetrip-bucket/WeTrip_Logo.jpg" class="img-rounded"></br>
+  				<form role="form" method="get" class="search" action="/website/search/">
 <!--   					<h3 class="no-margin-top h1">WeTrip. Find your next vacation.</h3> -->
   					<div class="input-group input-group-lg">
-  						<input type="search" placeholder="search for your next destination..." class="form-control">
+  						<input type="search" placeholder="search for your next destination..." name="q" class="form-control">
   						<span class="input-group-btn">
-  							<button id="home-page-button" class="btn btn-success" type="button">Search</button>
+  							<button id="home-page-button" class="btn btn-success" type="submit">Search</button>
   						</span>
   					</div>
   					<!-- /input-group -->
@@ -67,7 +67,7 @@
             <div class="col-md-4">
                 <img src="https://www.lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2013/11/hikehongkong_cs.jpg" class = "img-rounded" style="width:370px;height:228px;">
             </div>
-        </div>   
+        </div>
 
         <!-- The review of the week, and the people near you -->
         <div class="row">

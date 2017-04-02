@@ -90,4 +90,17 @@ def planning(request, trip_id):
   return render(request, 'website/planning.html')
 
 def search(request):
-  return HttpResponse("Search Page")
+  query = request.GET['q'].strip().lower()
+  
+  # search destinations
+  destinations = [dest for dest in Destination.objects.all() if query in dest.name.lower()]
+
+  # search people
+  people_l = [person for person in User.objects.all() if query in person.first_name.lower() + ' ' + person.last_name.lower()]
+  people = {}
+  for p in people_l:
+    people[p.login.username] = p.first_name + ' ' + p.last_name
+
+  context = {'destinations': destinations, 'people': people}
+  
+  return render(request, 'website/search.html', context)
