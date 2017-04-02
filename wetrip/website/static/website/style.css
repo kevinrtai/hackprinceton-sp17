@@ -1,4 +1,4 @@
-.full { 
+.full {
   background: url("https://i.ytimg.com/vi/hFlmkkVve94/maxresdefault.jpg") no-repeat center fixed;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -22,3 +22,6 @@ html, body, .container-table {
     vertical-align: middle;
 }
 
+.sidenav {
+  margin-bottom: 10px;
+}

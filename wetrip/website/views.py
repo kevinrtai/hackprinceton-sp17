@@ -37,17 +37,19 @@ def destination(request, dest_id, page):
   if False:
     return HttpResponseNotFound('<h1>Page not found</h1>')
 
+  context = {'dest_id': dest_id}
+
   # construct context
   if page == 'reviews':
-    return render(request, 'website/destination-reviews.html')
+    return render(request, 'website/destination-reviews.html', context)
   elif page == 'bookmarks':
-    return render(request, 'website/destination-bookmark.html')
+    return render(request, 'website/destination-bookmark.html', context)
   elif page == 'friends':
-    return render(request, 'website/destination-friends.html')
+    return render(request, 'website/destination-friends.html', context)
   elif page == 'photos':
-    return render(request, 'website/destination-photos.html')
+    return render(request, 'website/destination-photos.html', context)
   elif page == 'creategroup':
-    return render(request, 'website/destination-creategroup.html')
+    return render(request, 'website/destination-creategroup.html', context)
     
   return HttpResponseNotFound('<h1>Page not found</h1>') 
 
