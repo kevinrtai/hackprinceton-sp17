@@ -12,12 +12,23 @@ def login(request):
   return render(request, 'website/login.html')
 
 def profile(request, username, page):
+  results = User.objects.filter(login__username=username)
+
   # 404 if username not in database
-  if False:
+  if len(results) < 1:
     return HttpResponseNotFound('<h1>Page not found</h1>')
+  elif len(results) > 1:
+    print('PANIC: more than one matching user somehow')
+
+  profile = results[0]
 
   # construct context
-  context = {'username': username}
+  context = {'username': username, 
+             'first_name': profile.first_name, 
+             'last_name': profile.last_name,
+             'profile_pic': profile.profile_pic,
+             'location': profile.location,
+             'about': profile.about }
 
   # Return the subpage that has been requested 
   if page == 'about':

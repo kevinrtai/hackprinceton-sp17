@@ -17,7 +17,9 @@ class User(models.Model):
   login = models.OneToOneField(Login, on_delete=models.CASCADE, primary_key=True)
   first_name = models.CharField(max_length=20)
   last_name = models.CharField(max_length=20)
-  profile_pic = models.URLField(blank=True, null=True)
+  location = models.CharField(max_length=50)
+  about = models.TextField()
+  profile_pic = models.URLField(default='https://www.reinvestmentpartners.org/wp-content/uploads/2015/12/generic-profile.png')
   groups = models.ManyToManyField('Group', blank=True)
   friends = models.ManyToManyField('self', blank=True)
 
@@ -41,6 +43,15 @@ class Media(models.Model):
     return self.media_url
 
 
+class Bookmark(models.Model):
+  owner = models.ForeignKey(User, on_delete=models.CASCADE)
+  notes = models.TextField()
+  destination = models.ForeignKey('Destination')
+
+  def __str__(self):
+    return str(owner) + str(destination)
+
+
 class Review(models.Model):
   review_text = models.TextField()
   author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -53,6 +64,8 @@ class Review(models.Model):
 
 class Destination(models.Model):
   name = models.CharField(max_length=20)
+
+
   parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
 
   def __str__(self):
