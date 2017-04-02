@@ -80,3 +80,23 @@ html, body, .container-table {
 #home-page-button {
     background-color: green;
 }
+
+.crop {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 500px;
+    margin: 0 0 0 0;
+}
+
+.rounded {
+    border-radius: 4px;
+}
+
+.vcenter {
+   display: flex;
+   align-items: center;
+}

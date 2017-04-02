@@ -1,11 +1,10 @@
 {% extends 'website/profile.html' %}
 
 {% block profile-content %}
-<p align="left"><font size="5">Kuala Lumpur, Malaysia</font></p>
-<p align="left"><font size="3">June-August 2018, July 2019</font></p>
-<p align="left"><font size="3">senior trip plans- most likely would visit during the summer (though it will be hot)</font></p>
+{% for bookmark in bookmarks %}
+<p align="left"><font size="5">{{ bookmark.destination }}</font></p>
+<p align="left"><font size="3">{{ bookmark.date }}</font></p>
+<p align="left"><font size="3">{{ bookmark.notes }}</font></p>
 </br>
-<p align="left"><font size="5">Havana, Cuba</font></p>
-<p align="left"><font size="3">December 2017, January 2018</font></p>
-<p align="left"><font size="3">a winter break trip sounds fun!</font></p>
+{% endfor %}
 {% endblock %}

@@ -23,12 +23,23 @@ def profile(request, username, page):
   profile = results[0]
 
   # construct context
+  friends = {}
+  for friend in profile.friends.all():
+    friends[friend.login.username] = str(friend.first_name) + ' ' + (friend.last_name)
+
   context = {'username': username, 
              'first_name': profile.first_name, 
              'last_name': profile.last_name,
              'profile_pic': profile.profile_pic,
              'location': profile.location,
-             'about': profile.about }
+             'about': profile.about,
+             'reviews': profile.review_set.all(),
+             'num_reviews': len(profile.review_set.all()),
+             'media': profile.media_set.all(),
+             'num_media': len(profile.media_set.all()),
+             'friends': friends,
+             'num_friends': len(friends),
+             'bookmarks': profile.bookmark_set.all()}
 
   # Return the subpage that has been requested 
   if page == 'about':
@@ -39,18 +50,29 @@ def profile(request, username, page):
     return render(request, 'website/profile-photos.html', context)
   elif page == 'reviews':
     return render(request, 'website/profile-reviews.html', context)
+  elif page == 'friends':
+    return render(request, 'website/profile-friends.html', context)
 
   # return 404 
   return HttpResponseNotFound('<h1>Page not found</h1>')
 
 def destination(request, dest_id, page):
-  # 404 if dest_id not in database
-  if False:
-    return HttpResponseNotFound('<h1>Page not found</h1>')
+  results = Destination.objects.filter(id=dest_id)
 
-  context = {'dest_id': dest_id}
+  # 404 if dest_id not in database
+  if len(results) < 1:
+    return HttpResponseNotFound('<h1>Page not found</h1>')
+  elif len(results) > 1:
+    print('PANIC more than one result')
+
+  dest = results[0]
 
   # construct context
+  context = {'dest_id': dest_id,
+             'name': dest.name,
+             'media':  dest.media_set.all(),
+             'reviews': dest.review_set.all()}
+
   if page == 'reviews':
     return render(request, 'website/destination-reviews.html', context)
   elif page == 'bookmarks':

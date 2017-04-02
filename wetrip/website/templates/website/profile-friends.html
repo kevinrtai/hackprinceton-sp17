@@ -1,0 +1,10 @@
+{% extends 'website/profile.html' %}
+
+{% block profile-content %}
+<h3>Friends</h3>
+<ul>
+{% for username, name in friends.iteritems %}
+    <li><a href="/website/profile/{{ username }}/about/">{{ name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
