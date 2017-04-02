@@ -57,13 +57,22 @@ def profile(request, username, page):
   return HttpResponseNotFound('<h1>Page not found</h1>')
 
 def destination(request, dest_id, page):
-  # 404 if dest_id not in database
-  if False:
-    return HttpResponseNotFound('<h1>Page not found</h1>')
+  results = Destination.objects.filter(id=dest_id)
 
-  context = {'dest_id': dest_id}
+  # 404 if dest_id not in database
+  if len(results) < 1:
+    return HttpResponseNotFound('<h1>Page not found</h1>')
+  elif len(results) > 1:
+    print('PANIC more than one result')
+
+  dest = results[0]
 
   # construct context
+  context = {'dest_id': dest_id,
+             'name': dest.name,
+             'media':  dest.media_set.all(),
+             'reviews': dest.review_set.all()}
+
   if page == 'reviews':
     return render(request, 'website/destination-reviews.html', context)
   elif page == 'bookmarks':
