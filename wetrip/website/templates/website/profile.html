@@ -14,7 +14,7 @@
       </br></br>
       <p align="left"><font size="10">{{ first_name }} {{ last_name }}</font></p>
       <p align="left"><font size="5">{{ location }}</font></p>
-      <p align="left"><font size="5">97 Friends, 16 Reviews, 49 Photos</font></p>
+      <p align="left"><font size="5">{{ num_friends }} Friends, {{ num_reviews }} Reviews, {{ num_media }} Photos</font></p>
       </div>
   </div>
 
@@ -26,6 +26,7 @@
               <a href="/website/profile/{{ username }}/reviews/"><font size = "6">Reviews</font></a>    </br>
               <a href="/website/profile/{{ username }}/photos/"><font size = "6">Photos</font></a>      </br>
               <a href="/website/profile/{{ username }}/bookmarks/"><font size = "6">Bookmarks</font></a>   </br>
+              <a href="/website/profile/{{ username }}/friends/"><font size = "6">Friends</font></a></br>
               <a href="/website/profile/{{ username }}/about/"><font size = "6">About</font></a></br>
           </div>
       </div>

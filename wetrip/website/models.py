@@ -47,14 +47,16 @@ class Bookmark(models.Model):
   owner = models.ForeignKey(User, on_delete=models.CASCADE)
   notes = models.TextField()
   destination = models.ForeignKey('Destination')
+  date = models.DateField()
 
   def __str__(self):
-    return str(owner) + str(destination)
+    return str(self.owner) + str(self.destination)
 
 
 class Review(models.Model):
   review_text = models.TextField()
   author = models.ForeignKey(User, on_delete=models.CASCADE)
+  date = models.DateField()
   media = models.ManyToManyField(Media, blank=True)
   destination = models.ForeignKey('Destination')
 
@@ -64,8 +66,6 @@ class Review(models.Model):
 
 class Destination(models.Model):
   name = models.CharField(max_length=20)
-
-
   parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
 
   def __str__(self):

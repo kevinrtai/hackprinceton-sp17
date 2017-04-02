@@ -2,6 +2,9 @@
 
 
 {% block profile-content %}
-<img src="https://urbanresearch.files.wordpress.com/2009/05/fh020007.jpg" class="img-rounded" style="width:220px;height:160px;">
-<img src="https://userscontent2.emaze.com/images/680ddeec-e816-4256-a117-e9d0f3ada3a4/d01b4dec-173a-4ac9-a3b2-f70aa91e09fe.jpg" class="img-rounded" style="width:220px;height:160px;">
+{% for photo in media %}
+<div class="col-md-3 crop vcenter">
+  <img class="img-responsive rounded" src="{{ photo.media_url }}" alt="">
+</div>
+{% endfor %}
 {% endblock %}
